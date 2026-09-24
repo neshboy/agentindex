@@ -1,0 +1,51 @@
+{
+  "name": "agentindex",
+  "version": "0.1.0",
+  "description": "A robots.txt for AI agents: a spec + CLI + client library for publishing and checking fine-grained agent access policy (allow/disallow, rate limits, attribution) beyond what robots.txt can express.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "agentindex": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "agentindex",
+    "robots.txt",
+    "ai-agents",
+    "crawler",
+    "spec",
+    "cli"
+  ],
+  "dependencies": {
+    "minimatch": "^9.0.5",
+    "yaml": "^2.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
