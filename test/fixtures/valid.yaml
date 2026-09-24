@@ -1,0 +1,18 @@
+# A valid AgentIndex file used as a baseline in tests.
+version: 1
+default: disallow
+contact: "mailto:agents@example.com"
+rules:
+  - pattern: "/docs/**"
+    allow: true
+    rate_limit: 60
+    require_attribution: true
+  - pattern: "/docs/internal/**"
+    allow: false
+  - pattern: "/blog/**"
+    allow: true
+    rate_limit: 30
+  - pattern: "/api/*.json"
+    allow: true
+    rate_limit: 120
+    contact: "mailto:api-team@example.com"

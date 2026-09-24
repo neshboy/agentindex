@@ -1,0 +1,4 @@
+default: disallow
+rules:
+  - pattern: "/docs/**"
+    allow: true

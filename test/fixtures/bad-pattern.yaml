@@ -1,0 +1,7 @@
+version: 1
+default: allow
+rules:
+  - pattern: "docs/**"
+    allow: true
+  - pattern: ""
+    allow: false
