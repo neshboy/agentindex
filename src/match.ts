@@ -34,7 +34,10 @@ export function toPath(urlOrPath: string): string {
     const u = new URL(trimmed);
     return u.pathname.length > 0 ? u.pathname : "/";
   } catch {
-    return trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+    const bare = trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+    // Strip any trailing query string/fragment so bare paths normalize the
+    // same way full URLs do (see the `new URL(...).pathname` branch above).
+    return bare.split(/[?#]/)[0] || "/";
   }
 }
 
